@@ -4,7 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Pineapple
+  - Apple
+  - trap
   layers:
   - Default
   - TransparentFX
@@ -39,12 +40,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Background
-    uniqueID: 212241541
+  - name: BackGround
+    uniqueID: 302629069
     locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Terrain
-    uniqueID: 1405650749
+  - name: Terrain ForeGround
+    uniqueID: 738504569
     locked: 0

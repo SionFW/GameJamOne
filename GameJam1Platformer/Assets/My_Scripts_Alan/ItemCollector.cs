@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class ItemCollector2 : MonoBehaviour
+public class ItemCollector : MonoBehaviour
 {
     private int Apples = 0;
 

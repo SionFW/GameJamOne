@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     private BoxCollider2D coll;
     private SpriteRenderer sprite;
     private Animator anim;
-
+    public ParticleSystem dust;
 
     [SerializeField] private LayerMask jumpableGround;
 
@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float movespeed = 7f;
     [SerializeField] private float jumpforce = 14f;
 
-    private enum MovementState { idle, Running, Jumping, Falling  }
+    private enum MovementState { idle, Running, Jumping, Falling }
 
     [SerializeField] private AudioSource jumpSoundEffect;
 
@@ -36,8 +36,9 @@ public class PlayerMovement : MonoBehaviour
         // Player Horizontal Input 
 
         dirX = Input.GetAxisRaw("Horizontal");
-        rb.velocity = new Vector2(dirX * movespeed , rb.velocity.y);
+        rb.velocity = new Vector2(dirX * movespeed, rb.velocity.y);
 
+        CreateDust();
 
 
 
@@ -49,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, jumpforce);
         }
 
-       
+
 
         UpdateAnimationState();
     }
@@ -76,7 +77,7 @@ public class PlayerMovement : MonoBehaviour
 
         }
 
-        if(rb.velocity.y > .1f)
+        if (rb.velocity.y > .1f)
         {
             state = MovementState.Jumping;
 
@@ -100,5 +101,9 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
+    void CreateDust()
+    {
+        dust.Play();
+    }
 
 }
